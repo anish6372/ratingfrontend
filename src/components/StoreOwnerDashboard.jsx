@@ -20,7 +20,7 @@ const StoreOwnerDashboard = () => {
         }
 
         
-        const storeResponse = await axios.get("http://localhost:5001/api/stores", {
+        const storeResponse = await axios.get("http://localhost:5001/api/admin/stores", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStore(storeResponse.data);

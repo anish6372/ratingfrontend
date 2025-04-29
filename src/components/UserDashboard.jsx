@@ -20,7 +20,7 @@ const UserDashboard = () => {
         }
 
         
-        const response = await axios.get("http://localhost:5001/api/stores", {
+        const response = await axios.get("http://localhost:5001/api/admin/stores", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStores(response.data);
