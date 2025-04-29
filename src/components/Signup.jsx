@@ -41,7 +41,7 @@ function Signup() {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post("http://localhost:5001/api/auth/register", {
+      await axios.post("http://localhost:5001/api/auth/register", {
         name,
         email,
         address,
@@ -49,14 +49,8 @@ function Signup() {
         role,
       });
 
-      // Redirect based on role
-      if (role === "ADMIN") {
-        navigate("/admin");
-      } else if (role === "STORE_OWNER") {
-        navigate("/stores");
-      } else {
-        navigate("/user");
-      }
+      
+      navigate("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong!");
     }

@@ -5,7 +5,7 @@ import './App.css'
 import Login from './components/Login';
 import Signup from './components/Signup';
 
-import StoreList from './components/StoreList';
+
 
 import AdminDashboard from './components/AdminDashboard';
 import UserDashboard from './components/UserDashboard';

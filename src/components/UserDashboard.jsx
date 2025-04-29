@@ -13,7 +13,16 @@ const UserDashboard = () => {
   useEffect(() => {
     const fetchStores = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/stores");
+        const token = localStorage.getItem("token");
+        if (!token) {
+          console.error("Token is missing");
+          return;
+        }
+
+        
+        const response = await axios.get("http://localhost:5001/api/stores", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         setStores(response.data);
       } catch (error) {
         console.error("Error fetching stores:", error);
